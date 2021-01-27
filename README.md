@@ -10,9 +10,9 @@ ___
   - [Estado de las variables de componente en React](#estado-de-las-variables-de-componente-en-react)
   - [Componentes ejemplos que podemos hacer:](#componentes-ejemplos-que-podemos-hacer)
   - [Todo-do List Componentes](#todo-do-list-componentes)
-  - [## Tips CSS](#-tips-css)
+  - [Tips CSS](#tips-css)
     - [Guia de flexbox](#guia-de-flexbox)
-  - [## Tips Javascript](#-tips-javascript)
+  - [Tips Javascript](#tips-javascript)
       - [Ejemplos de imports](#ejemplos-de-imports)
       - [Importacion de elementos por defecto](#importacion-de-elementos-por-defecto)
   ___
