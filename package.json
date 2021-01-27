@@ -6,6 +6,10 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "components-font-awesome": "4.7.0",
+    "jquery": "^3.5.1",
+    "node-sass": "4.14.1",
+    "pikaday": "^1.8.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
@@ -34,5 +38,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "- Create React App (La mas popular ultimamente y mas facil, y la que vamos a ver en esta formacion) - Next.js - Gatsby - Neutrino - Parcel",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }

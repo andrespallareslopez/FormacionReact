@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+
+//import LayoutMasterPage from './components/LayoutMasterPage'
+import Layout from './components/Layout'
+import LayoutC from './components/Layout/template'
+
+import PanelCenter from './components/PanelCenter'
+
 import './App.css';
+import { NumericSpinner } from 'components/Spinner';
+import NumericSpinnerC from './components/NumericSpinner/template'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LayoutC>
+       
+       <PanelCenter>
+          <NumericSpinner></NumericSpinner>
+          <NumericSpinnerC></NumericSpinnerC>
+       </PanelCenter>
+
+    </LayoutC>
   );
 }
 

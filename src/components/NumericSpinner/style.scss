@@ -1,0 +1,118 @@
+@import "../shared/variables";
+
+
+.panel-spinner{
+    display:block;
+    position:relative;
+    
+    width:100%;
+    
+    padding:0;
+    margin:0 auto;
+    background: $c50;
+    &.content{
+      min-height:calc(100vh - #{$footer} - #{$nav} );  
+      height:calc(100vh - #{$footer} - #{$nav} );
+      @media (min-width:768px){   
+        min-height:calc(100vh - #{$headerHeight} - #{$footer} - #{$nav});   
+        height:calc(100vh - #{$headerHeight} - #{$footer} - #{$nav});  
+      }   
+    }
+    &.splash-text{
+      height:calc(100vh - 19px);  //es lo que mide el span en altura con su contenido
+    }
+    &.splash{
+        height:100vh;
+    }
+    &.splash-panel{
+      height: calc(100vh - #{$footer} - #{$nav} ) ;
+      @media (min-width:768px){ 
+       height:calc(100vh - #{$headerHeight} - #{$footer} - #{$nav} );  
+      }
+    }
+    .panel-loader{
+        position:absolute;
+        padding:0;
+        color: $c500;
+        height:64px;
+        width:200px;
+        max-width: 200px;
+        margin:0 auto;
+        left:calc(50% - 32px);
+        top:50%;
+        transform:translateY(-50%);
+     -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+    }
+   
+ }
+
+.spin-button {
+    display:inline-block;
+    
+    font-family: Helvetica,Arial,sans-serif ;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px black;
+    color: $c900 ;
+   
+    position:relative;
+    background: $c50;
+    cursor:pointer;
+   
+    border:2px solid $c900;
+    margin:0px;
+    margin-top:0px;
+    top:0px;
+    border-radius: 5px;   
+     text-align: center;
+       -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+          
+      background-image: none;  
+     /* pointer-events: none;*/
+     width:50px;
+     height: 45px; 
+     &.nav-2x{
+       width:120px;
+     } 
+     .fa{
+       font-weight: bold;
+       color:$c50; 
+     } 
+     
+     
+}
+.spin-button:focus,.spin-button:active, .spin-button:hover{
+  text-decoration: none;
+  background: none;
+  outline:none;
+  background: $c900;
+  border:2px solid $c50;
+  color: $c50 ;
+  /*
+     -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+*/
+  /*
+   outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+  */
+}
+
+.spin-content{
+    display:inline-block;
+    color:$c900;
+    vertical-align: top;
+    font-weight: bold;
+    //height:45px;
+    //line-height: 45px;
+   margin-top:10px;
+   margin-left:10px;
+   margin-right:10px;
+  }

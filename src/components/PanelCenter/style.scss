@@ -1,0 +1,50 @@
+@import "../shared/variables";
+
+@import "../shared/variables";
+
+.panel-spinner{
+    display:block;
+    position:relative;
+    
+    width:100%;
+    
+    padding:0;
+    margin:0 auto;
+    background: $c50;
+    &.content{
+      min-height:calc(100vh - #{$footer} - #{$nav} );  
+      height:calc(100vh - #{$footer} - #{$nav} );
+      @media (min-width:768px){   
+        min-height:calc(100vh - #{$headerHeight} - #{$footer} - #{$nav} );   
+        height:calc(100vh - #{$headerHeight} - #{$footer} - #{$nav});  
+      }   
+    }
+    &.splash-text{
+      height:calc(100vh - 19px);  //es lo que mide el span en altura con su contenido
+    }
+    &.splash{
+        height:100vh;
+    }
+    &.splash-panel{
+      height: calc(100vh - #{$footer} - #{$nav} - 20px) ;
+      @media (min-width:768px){ 
+       height:calc(100vh - #{$headerHeight} - #{$footer} - #{$nav} );  
+      }
+    }
+    .panel-loader{
+        position:absolute;
+        padding:0;
+        color: $c500;
+        height:64px;
+        width:200px;
+        max-width: 200px;
+        margin:0 auto;
+        left:calc(50% - 32px);
+        top:50%;
+        transform:translateY(-50%);
+     -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+    }
+   
+ }

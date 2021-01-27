@@ -1,0 +1,9 @@
+@import "../shared/variables";
+
+footer {
+    display:block;
+    width:100%;  
+     height: $footer;
+     @include background01-inv;
+     @include shadowtop01;
+   }

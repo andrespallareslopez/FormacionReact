@@ -1,70 +1,264 @@
-# Getting Started with Create React App
+# Apuntes React. Conociendo React
+## Cadena de herramientas integradas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Create React App (La mas popular ultimamente y mas facil, y la que vamos a ver en esta formacion)
+- Next.js
+- Gatsby
+- Neutrino
+- Parcel
 
-## Available Scripts
+Desde cero nos la podemos configurar con:
 
-In the project directory, you can run:
+npm + Webpack + babel<br>
+yarn + Webpack + babel<br>
+npm + gulp + babel<br>
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Guia de flexbox
 
-### `yarn test`
+Para hacer en React un layout,
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Empezar un proyecto react desde cero
 
-### `yarn build`
+el comando create-react-app y la carpeta donde se va a crear la estructura base del proyecto en React
+~~~
+npx create-react-app prueba03
+~~~
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+para instalar librerias externas como  jquery y otras
+~~~
+npm i jquery --save
+yarn add jquery
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm i pikaday --save
+yarn add pikaday
+~~~
+podemos hacerlo con yarn, que es mas recomendable si hemos creado el proyecto con create-react-app, de echo en mi maquina hay que utilizar yarn una vez creado el proyecto create-react-app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+~~~
 
-### `yarn eject`
+yarn add node-sass@4.14.1
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+si pondemos yarn add node-sass sin version nos istalara la ultima la 5.0.0 y vamos a tener problemas, por eso instalar la 4.14.1
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+si la hemos instalado y queremos desistalarla ponemos:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+npm unistall node-sass
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+yarn remove node-sass
+~~~
 
-## Learn More
+Explicamos como en el componente principal App podemos quitar el ejemplo y empezar a poner nuestros componentes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+si diera problema el comando npm a la hora de instalar paquetes
+~~~
+npm cache clean --force
+~~~
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+luego nos situamos dentro del directorio prueba03
 
-### Analyzing the Bundle Size
+y lanzamos el comando 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+~~~
+npm start
+o su analogo en yarn
+yarn start
+~~~
 
-### Making a Progressive Web App
+Limpiamos un poco el fichero App.js, porque nos ha metido un codigo de ejemplo inicial del logotipo de react girando.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+Creacion de componentes 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Componentes de clase<br>
+  Ejemplo de estructura
 
-### Deployment
+~~~
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+import React from 'react'
 
-### `yarn build` fails to minify
+import './style.scss'
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+export default class NumericSpinnerC extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state= {count:0}
+        this.sumar = this.sumar.bind(this)
+        this.restar = this.restar.bind(this)
+    }
+    
+    sumar(e){
+        this.setState((state,props)=>({count: state.count+1}))
+    }
+    restar(e){
+      this.setState((state,props)=>({count:state.count-1}))
+    }
+    componentDidMount(){
+       
+    }
+    componentWillUnmount() {
+    
+    }
+    render(){
+
+
+        return (
+
+        <React.Fragment>
+         
+            <button className="spin-button" onClick= {this.sumar}>+</button>
+            <span className="spin-content">{this.state.count}</span>
+            <button className="spin-button" onClick={this.restar}>-</button>
+          
+         
+         </React.Fragment>
+        )
+    }
+
+}
+  ~~~
+
+- Componentes funcionales</br>
+Ejemplo 
+~~~
+
+~~~
+
+  Otro ejemplo 
+~~~
+function Clock(props) {
+  return (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {props.date.toLocaleTimeString()}.</h2>
+    </div>
+  );
+}
+
+function tick() {
+  ReactDOM.render(
+    <Clock date={new Date()} />,
+    document.getElementById('root')
+  );
+}
+
+setInterval(tick, 1000)
+
+~~~
+
+
+### Estructura de un componente:
+
+Ejemplos de imports
+
+~~~
+import * as myModule from '/modules/my-module.js'
+~~~
+Importacion de elementos por defecto
+~~~
+import myDefault from '/modules/my-module.js'
+~~~
+
+
+~~~
+import {foo, bar} from "my-module.js"
+~~~
+
+Pero tambien se podria hacer estas formas:
+
+~~~
+import myDefault, * as myModule from '/modules/my-module.js'
+// myModule used as a namespace
+
+o de esta otra forma
+
+import myDefault, {foo, bar} from '/modules/my-module.js'
+// specific, named imports
+
+~~~
+
+
+Ejemplo de exportacion con funciones privadas dentro del modulo
+~~~
+function getJSON(url, callback) {
+  let xhr = new XMLHttpRequest()
+  xhr.onload = function () {
+    callback(this.responseText)
+  };
+  xhr.open('GET', url, true)
+  xhr.send();
+}
+
+export function getUsefulContents(url, callback) {
+  getJSON(url, data => callback(JSON.parse(data)))
+}
+~~~
+Luego llamamos al modulo con el import de la siguiente manera
+~~~
+import { getUsefulContents } from '/modules/file.js'
+
+getUsefulContents('http://www.example.com',
+    data => { doSomethingUseful(data); })
+~~~
+
+
+Dentro del componente tenemos :
+- Imports con fichero js y css
+
+- funcion componente con su cuerpo, devuelve un html (jsx)
+
+Ojo que cuando peguemos html el class hay que ponerlo como className
+
+Luego como se llama a ese componente desde html
+
+- Ver el estado en React, como se gestiona desde los componentes de clase y los componentes funcionales
+
+- El estado de las variables en los componentes en react es inmutable, para manejar el estado de las variables continuamente estamos creando nuevos valores, para reemplazarlos por los antiguos.
+
+- Esto viene de lenguajes funcionales, aunque javascript no es puramente funcional, pero si tiene muchas cosas de los lenguajes funcionales.
+
+Componentes ejemplos que podemos hacer:
+
+Hacer un panel numerico si puede ser con calculadora
+
+Explicar los react hooks, para que sirven, la nueva forma de gestionar el estado de las variables dentro de un componente react:
+- useState
+- useEffects
+- useRef
+- useCallback
+- useReducer
+- useContext
+
+Tipos de componentes que podemos hacer con React:
+
+- Layout (Ejemplo de layout con flex box)
+  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+  - Header
+  
+  - footer
+
+  - panel lateral izquierdo(Aside)
+
+  - panel lateral derecho (aside)
+
+- Layout Legacy
+- Layout con Slots
+
+-MenuHorizontal
+
+-MenuAcordeon
+
+-MenuPanel
+
+-Calendario
+
+-Panel numerico
+
+-Calculadora
+

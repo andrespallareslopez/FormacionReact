@@ -1,0 +1,16 @@
+@import "../shared/variables";
+
+nav {
+    width: 100%;
+    position:relative;
+     height: $nav;
+     @include background01;
+     @include shadowbottom01;
+   }
+
+   .push-float-left{
+    float:left;
+   }
+   .push-float-right{
+    float:right;
+   }
