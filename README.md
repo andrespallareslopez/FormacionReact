@@ -15,11 +15,6 @@ npm + gulp + babel<br>
 
 
 
-## Guia de flexbox
-
-Para hacer en React un layout,
-https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-
 ## Empezar un proyecto react desde cero
 
 el comando create-react-app y la carpeta donde se va a crear la estructura base del proyecto en React
@@ -69,42 +64,50 @@ o su analogo en yarn
 yarn start
 ~~~
 
+## Pasos despues instalar el proyecto base
 Limpiamos un poco el fichero App.js, porque nos ha metido un codigo de ejemplo inicial del logotipo de react girando.
 
+En el fichero App.js, introducimos nuestro propio componente layout inicial personalizado.
 
-Creacion de componentes 
+Fijarse en el fichero index.js bajo la carpeta "src" que es desde donde llama al componente App del fichero App.js
+
+## Tipo de componentes en React 
 
 - Componentes de clase<br>
   Ejemplo de estructura
 
 ~~~
-
+//Import de React y de otras librerias y del estilo del componente
 import React from 'react'
 
 import './style.scss'
 
 
 export default class NumericSpinnerC extends React.Component {
-
+    //Constructor, inicializa las variables
     constructor(props){
         super(props)
+        //Inicializar el estado del componente
         this.state= {count:0}
         this.sumar = this.sumar.bind(this)
         this.restar = this.restar.bind(this)
     }
-    
+    //Acciones
     sumar(e){
         this.setState((state,props)=>({count: state.count+1}))
     }
     restar(e){
       this.setState((state,props)=>({count:state.count-1}))
     }
+    //funciones eventos ciclo de vida de un componente
     componentDidMount(){
        
     }
     componentWillUnmount() {
     
     }
+
+    //funcion renderizado del componente
     render(){
 
 
@@ -182,7 +185,7 @@ setInterval(tick, 1000)
 
 
 
-### Estructura de un componente:
+### Estructura de un componente en React:
 
 - Imports
 
@@ -194,6 +197,83 @@ setInterval(tick, 1000)
 
 - Acciones
 
+
+
+ *Ojo que cuando peguemos html el atributo class hay que ponerlo como className si importamos desde html*
+
+
+## Estado de las variables de componente en React
+
+- Como se gestiona desde los componentes de clase y los componentes funcionales dichas variables.
+
+- El estado de las variables en los componentes en react es inmutable, para manejar el estado de las variables continuamente estamos creando nuevos valores, para reemplazarlos por los antiguos.
+
+- Esto viene de lenguajes funcionales, aunque javascript no es puramente funcional, pero si tiene muchas cosas de los lenguajes funcionales.
+
+- Explicar los react hooks, para que sirven, la nueva forma de gestionar el estado de las variables dentro de un componente funcional en react:
+  - useState
+  - useEffects
+  - useRef
+  - useCallback
+  - useReducer
+  - useContext
+
+## Componentes ejemplos que podemos hacer:
+
+Hacer un panel numerico si puede ser con calculadora
+
+
+
+Tipos de componentes que podemos hacer con React:
+
+- Layout (Ejemplo de layout con flex box)
+  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+  - Header
+  
+  - footer
+
+  - panel lateral izquierdo(Aside)
+
+  - panel lateral derecho (aside)
+
+
+## Todo-do List Componentes
+
+- [x] Footer
+- [x] Header
+- [x] InputSpinner
+- [x] Layout
+- [x] LayoutC
+- [ ] LayoutLegacy
+- [x] LayoutMasterPage
+- [ ] LayoutSlots
+- [x] Loaders
+- [x] Logo1
+- [x] Logo2
+- [x] MenuHorizontal
+- [ ] MenuVertical
+- [ ] MenuVerticalPanel
+- [x] Nav
+- [ ] NavMenuButton
+- [x] NumericSpinner
+- [x] PanelCenter
+- [ ] PanelNumerico
+- [x] PruebaForm
+- [x] Spinner
+- [ ] Tab
+
+## Tips CSS
+---
+
+### Guia de flexbox
+
+Para hacer en React un layout, con CSS en concreto utilizarun tipo de modelo de caja o de posicionamiento de elementos mediante CSS llamado flex-box.
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+## Tips Javascript
+---
 
 #### Ejemplos de imports
 
@@ -246,59 +326,3 @@ import { getUsefulContents } from '/modules/file.js'
 getUsefulContents('http://www.example.com',
     data => { doSomethingUseful(data); })
 ~~~
-
-
-Dentro del componente tenemos :
-- Imports con fichero js y css
-
-- funcion componente con su cuerpo, devuelve un html (jsx)
-
-*Ojo que cuando peguemos html el atributo class hay que ponerlo como className*
-
-Luego como se llama a ese componente desde html
-
-- Ver el estado en React, como se gestiona desde los componentes de clase y los componentes funcionales
-
-- El estado de las variables en los componentes en react es inmutable, para manejar el estado de las variables continuamente estamos creando nuevos valores, para reemplazarlos por los antiguos.
-
-- Esto viene de lenguajes funcionales, aunque javascript no es puramente funcional, pero si tiene muchas cosas de los lenguajes funcionales.
-
-Componentes ejemplos que podemos hacer:
-
-Hacer un panel numerico si puede ser con calculadora
-
-Explicar los react hooks, para que sirven, la nueva forma de gestionar el estado de las variables dentro de un componente react:
-- useState
-- useEffects
-- useRef
-- useCallback
-- useReducer
-- useContext
-
-Tipos de componentes que podemos hacer con React:
-
-- Layout (Ejemplo de layout con flex box)
-  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-  - Header
-  
-  - footer
-
-  - panel lateral izquierdo(Aside)
-
-  - panel lateral derecho (aside)
-
-- Layout Legacy
-- Layout con Slots
-
--MenuHorizontal
-
--MenuAcordeon
-
--MenuPanel
-
--Calendario
-
--Panel numerico
-
--Calculadora
-
