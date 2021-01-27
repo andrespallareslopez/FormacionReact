@@ -153,7 +153,20 @@ setInterval(tick, 1000)
 ~~~
 
 
+
+
 ### Estructura de un componente:
+
+- Imports
+
+- Render
+
+- Ciclo de vida del componente
+
+- Estado
+
+- Acciones
+
 
 Ejemplos de imports
 

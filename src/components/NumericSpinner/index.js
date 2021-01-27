@@ -5,6 +5,10 @@ import './style.scss'
 
 function NumericSpinner(){
     const [count,setCount] = useState(0)
+    
+    useEffect(()=>{
+
+    },[])
 
     return (
         <>
