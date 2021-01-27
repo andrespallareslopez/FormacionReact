@@ -1,4 +1,21 @@
 # Apuntes React. Conociendo React
+
+## Tabla de Contenidos
+___
+  - [Cadena de herramientas integradas](#cadena-de-herramientas-integradas)
+  - [Empezar un proyecto react desde cero](#empezar-un-proyecto-react-desde-cero)
+  - [Pasos despues instalar el proyecto base](#pasos-despues-instalar-el-proyecto-base)
+  - [Tipo de componentes en React](#tipo-de-componentes-en-react)
+    - [Estructura de un componente en React:](#estructura-de-un-componente-en-react)
+  - [Estado de las variables de componente en React](#estado-de-las-variables-de-componente-en-react)
+  - [Componentes ejemplos que podemos hacer:](#componentes-ejemplos-que-podemos-hacer)
+  - [Todo-do List Componentes](#todo-do-list-componentes)
+  - [## Tips CSS](#-tips-css)
+    - [Guia de flexbox](#guia-de-flexbox)
+  - [## Tips Javascript](#-tips-javascript)
+      - [Ejemplos de imports](#ejemplos-de-imports)
+      - [Importacion de elementos por defecto](#importacion-de-elementos-por-defecto)
+  ___
 ## Cadena de herramientas integradas
 
 - Create React App (La mas popular ultimamente y mas facil, y la que vamos a ver en esta formacion)
