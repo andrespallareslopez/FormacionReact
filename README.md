@@ -128,6 +128,33 @@ export default class NumericSpinnerC extends React.Component {
 Ejemplo 
 ~~~
 
+import {useState,useEffect} from 'react'
+
+import './style.scss'
+
+function NumericSpinner(){
+    const [count,setCount] = useState(0)
+
+    return (
+        <>
+          <div className="panel-spinner content" >
+            <div className="panel-loader" >
+            <button className="spin-button" onClick= {function(){
+                setCount(count+1)
+            }}>+</button>
+            <span className="spin-content">{count}</span>
+            <button className="spin-button" onClick={
+                ()=> setCount(count-1)
+            }>-</button>
+            </div>
+          </div>             
+        </>
+    )
+}
+
+export default NumericSpinner
+
+
 ~~~
 
   Otro ejemplo 
@@ -168,12 +195,12 @@ setInterval(tick, 1000)
 - Acciones
 
 
-Ejemplos de imports
+#### Ejemplos de imports
 
 ~~~
 import * as myModule from '/modules/my-module.js'
 ~~~
-Importacion de elementos por defecto
+#### Importacion de elementos por defecto
 ~~~
 import myDefault from '/modules/my-module.js'
 ~~~
@@ -226,7 +253,7 @@ Dentro del componente tenemos :
 
 - funcion componente con su cuerpo, devuelve un html (jsx)
 
-Ojo que cuando peguemos html el class hay que ponerlo como className
+*Ojo que cuando peguemos html el atributo class hay que ponerlo como className*
 
 Luego como se llama a ese componente desde html
 
